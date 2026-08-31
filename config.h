@@ -76,6 +76,7 @@ static const char *dmenucmd[] = {
 
 static const char *termcmd[]  = { "st", NULL };
 static const char *lockcmd[]  = { "slock", NULL };
+static const char *notification_action[]  = { "dunstctl", "context", NULL };
 static const char *screenshot_all[] = { "sh", "-c", "maim ~/Pictures/$(date +'%m-%d-%Y-%H%M%S').png", NULL };
 
 static const Key keys[] = {
@@ -84,6 +85,7 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY|ShiftMask,             XK_l,      spawn,          {.v = lockcmd } },
 	{ MODKEY|ShiftMask,             XK_s,      spawn,          {.v = screenshot_all } },
+	{ MODKEY|ShiftMask,             XK_i,      spawn,          {.v = notification_action } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
